@@ -1,0 +1,129 @@
+/* ======= Base Setup ======= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #eef2f3, #8e9eab);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+/* ======= Header ======= */
+header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header input {
+  margin-top: 15px;
+  padding: 12px 20px;
+  width: 280px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+header input:focus {
+  box-shadow: 0 3px 12px rgba(0, 140, 255, 0.4);
+  transform: scale(1.03);
+}
+
+.coursenumbers {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ======= Course Container ======= */
+#course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* ======= Course Card ======= */
+.course {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-top: 4px solid transparent;
+}
+
+.course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-top: 4px solid #00aaff;
+}
+
+.course h2 {
+  color: #007bff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.course p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ======= Top Rated Section ======= */
+section.center {
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 50px;
+  background: linear-gradient(120deg, #c9d6ff, #e2e2e2);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+section.center h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #444;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header input {
+    width: 90%;
+  }
+  .course {
+    padding: 15px;
+  }
+  .course h2 {
+    font-size: 1.2rem;
+  }
+}
