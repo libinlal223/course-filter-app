@@ -1,85 +1,105 @@
-/* ======= Base Setup ======= */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #eef2f3, #8e9eab);
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
   color: #333;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
   padding-bottom: 50px;
 }
 
-/* ======= Header ======= */
+/* ===== Header Section ===== */
 header {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 25px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  font-size: 2.5rem;
-  background: linear-gradient(to right, #007bff, #00c6ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: 1px;
+  background: linear-gradient(to right, #007bff, #00e676);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header input {
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 12px 20px;
   width: 280px;
-  border: none;
   border-radius: 30px;
-  font-size: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bff;
   outline: none;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
 header input:focus {
-  box-shadow: 0 3px 12px rgba(0, 140, 255, 0.4);
+  border-color: #00e676;
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
   transform: scale(1.03);
+}
+
+#sort-price {
+  margin-left: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 2px solid #007bff;
+  background: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#sort-price:hover {
+  border-color: #00e676;
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
 }
 
 .coursenumbers {
   margin-top: 15px;
   font-weight: 600;
-  color: #444;
+  color: #222;
+  font-size: 1.1rem;
 }
 
-/* ======= Course Container ======= */
+/* ===== Course Cards ===== */
 #course-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  gap: 30px;
   width: 90%;
   max-width: 1200px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-/* ======= Course Card ======= */
 .course {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid transparent;
+  transition: 0.3s;
   cursor: pointer;
-  border-top: 4px solid transparent;
+  transform: translateY(0);
 }
 
 .course:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border-top: 4px solid #00aaff;
+  transform: translateY(-8px);
+  border-top: 5px solid #00e676;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .course h2 {
@@ -89,41 +109,42 @@ header input:focus {
 }
 
 .course p {
-  margin-bottom: 6px;
   font-size: 0.95rem;
   color: #555;
+  margin-bottom: 5px;
 }
 
-/* ======= Top Rated Section ======= */
-section.center {
+/* ===== Top Rated Section ===== */
+.center {
   text-align: center;
   width: 90%;
   max-width: 1200px;
-  margin-top: 50px;
-  background: linear-gradient(120deg, #c9d6ff, #e2e2e2);
+  margin-top: 60px;
+  background: linear-gradient(135deg, #f8ffae, #43c6ac);
   border-radius: 25px;
-  padding: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 35px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  color: #222;
 }
 
-section.center h1 {
-  margin-bottom: 20px;
+.center h1 {
   font-size: 2rem;
-  color: #444;
+  margin-bottom: 20px;
 }
 
-/* ======= Responsive Design ======= */
+/* ===== Responsive ===== */
 @media (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
   header h1 {
     font-size: 2rem;
   }
-  header input {
+  header input, #sort-price {
     width: 90%;
+    margin-top: 10px;
   }
   .course {
-    padding: 15px;
-  }
-  .course h2 {
-    font-size: 1.2rem;
+    padding: 18px;
   }
 }
